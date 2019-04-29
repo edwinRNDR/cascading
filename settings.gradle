@@ -1,0 +1,3 @@
+rootProject.name = "cascading"
+
+include ':app', ':annotation', ':processor'
