@@ -150,6 +150,8 @@ class CascadingProcessor : AbstractProcessor() {
         return when {
             toString == "java.lang.String" -> ClassName("kotlin", "String")
             toString == "java.lang.String?" -> ClassName("kotlin", "String").copy(nullable = true)
+            toString == "java.lang.Double?" -> ClassName("kotlin", "Double").copy(nullable = true)
+            toString == "java.lang.Double" -> ClassName("kotlin", "Double")
             toString == "kotlin.Array<java.lang.Integer>" -> ClassName("kotlin", "Array").parameterizedBy(ClassName("kotlin", "Int"))
             toString == "kotlin.Array<java.lang.Integer>?" -> ClassName("kotlin", "Array").parameterizedBy(ClassName("kotlin", "Int")).copy(nullable = true)
             toString == "kotlin.Array<java.lang.Float>" -> ClassName("kotlin", "Array").parameterizedBy(ClassName("kotlin", "Float"))
